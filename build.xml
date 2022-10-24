@@ -58,7 +58,7 @@
   <property name="ssClosureOutputSpec" value="ECMASCRIPT_2019"/>
 
   <!--The configuration file path, relative to this build file. -->
-  <property name="ssConfig" value="configTest.xml"/>
+  <property name="ssConfig" value="config.xml"/>
 
   <!--The full path to the configuration file. You can use either this or ssConfig. -->
   <property name="ssConfigFile" value="${ssBaseDir}/${ssConfig}"/>
@@ -148,7 +148,7 @@
     <!-- If we're building the test data, we need to generate the VERSION file
          and also copy the .htm_ files to .html before starting. -->
     <if>
-      <equals arg1="configTest.xml" arg2="${ssConfigFileName}"/>
+      <equals arg1="config.xml" arg2="${ssConfigFileName}"/>
       <then>
         <delete file="${ssBaseDir}/test/VERSION"/>
         <exec executable="git">
@@ -165,7 +165,7 @@
       .html file that causes endless merge conflicts.
     -->
     <if>
-      <equals arg1="configTest.xml" arg2="${ssConfigFileName}"/>
+      <equals arg1="config.xml" arg2="${ssConfigFileName}"/>
       <then>
         <copy file="${ssBaseDir}/test/search.htm_" tofile="${ssBaseDir}/test/search.html"/>
       </then>
